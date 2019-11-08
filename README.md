@@ -1,6 +1,13 @@
-# oplog
-MongoDB oplog tailing by Golang
+# Oplog
+![GitHub](https://img.shields.io/github/license/gnokoheat/oplog) ![GitHub top language](https://img.shields.io/github/languages/top/gnokoheat/oplog) ![GitHub last commit](https://img.shields.io/github/last-commit/gnokoheat/oplog)
 
+MongoDB replicaset oplog tailing by Golang
+
+## Tailing of MongoDB Oplog
+
+It can be send oplog to everywhere with minimal system resource usage.
+
+- MongoDB replicaset -> Oplog -> MongoDB | Logstash | Fluentd | ... 
 
 ## Install
 
