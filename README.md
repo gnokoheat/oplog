@@ -30,13 +30,13 @@ import (
 func main() {
 	// mongodb://username:password@127.0.0.1:27017,127.0.0.1:27018/local?replicaSet=rs01&authSource=admin
 	var o = &oplog.Options{
-		Addrs:      []string{"127.0.0.1:27017", "127.0.0.1:27018"},
-		Username:   "username",
-		Password:   "password",
-		ReplicaSet: "rs01",
-		DB:         "myDB",
-		Collection: "myCollection",
-		Events:     []string{"insert", "update", "delete"},
+		Addrs:      []string{"127.0.0.1:27017", "127.0.0.1:27018"}, // replicaset host and port
+		Username:   "username", // admin db username
+		Password:   "password", // admin db user password
+		ReplicaSet: "rs01", // replicaset name
+		DB:         "myDB", // tailing target db
+		Collection: "myCollection", // tailing target collection
+		Events:     []string{"insert", "update", "delete"}, // tailing target method
 	}
 
 	l := make(chan *[]oplog.Log)
@@ -63,4 +63,5 @@ func main() {
 2019/11/08 16:14:04 [Result]  &[{2019-11-08 16:14:02.744 +0900 ... ]
 2019/11/08 16:14:08 [Result]  &[{2019-11-08 16:14:08.554 +0900 ... ]
 2019/11/08 16:16:57 [Result]  &[{2019-11-08 16:16:57.364 +0900 ... ]
+...
 ```
