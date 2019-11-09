@@ -9,7 +9,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-// Options :
+// Options : MongoDB connection information for oplog tailing
 type Options struct {
 	Addrs      []string
 	Username   string
@@ -20,13 +20,7 @@ type Options struct {
 	Events     []string
 }
 
-// LogC :
-type LogC chan *[]Log
-
-// ErrC :
-type ErrC chan error
-
-// Log :
+// Log : Oplog document
 type Log struct {
 	Timestamp    time.Time              `json:"wall" bson:"wall"`
 	HistoryID    int64                  `json:"h" bson:"h"`
@@ -37,7 +31,7 @@ type Log struct {
 	Update       map[string]interface{} `json:"o2" bson:"o2"`
 }
 
-// MgoConn :
+// MgoConn : MongoDB connect
 func (o *Options) MgoConn(e chan error) (*mgo.Session, *mgo.Collection) {
 	var mgoSess *mgo.Session
 	var mgoColl *mgo.Collection
@@ -66,7 +60,7 @@ func (o *Options) MgoConn(e chan error) (*mgo.Session, *mgo.Collection) {
 	return mgoSess, mgoColl
 }
 
-// Tail :
+// Tail : MongoDB oplog tailing start
 func (o *Options) Tail(l chan *[]Log, e chan error) {
 	bsonInsert := bson.M{}
 	bsonUpdate := bson.M{}
