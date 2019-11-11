@@ -39,8 +39,10 @@ func main() {
 		Events:     []string{"insert", "update", "delete"}, // tailing target method
 	}
 
-	l := make(chan *[]oplog.Log)
-	e := make(chan error)
+	l := make(chan *[]oplog.Log) // Oplog Channel
+	e := make(chan error) // Error Channel
+	
+	// Oplog tailing start ! 
 	go o.Tail(l, e)
 
 	for {
