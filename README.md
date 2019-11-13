@@ -1,5 +1,5 @@
 # Oplog
-![GitHub](https://img.shields.io/github/license/gnokoheat/oplog) ![GitHub top language](https://img.shields.io/github/languages/top/gnokoheat/oplog) ![GitHub last commit](https://img.shields.io/github/last-commit/gnokoheat/oplog)
+![GitHub](https://img.shields.io/github/license/gnokoheat/oplog) ![GitHub top language](https://img.shields.io/github/languages/top/gnokoheat/oplog) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/gnokoheat/oplog) ![GitHub last commit](https://img.shields.io/github/last-commit/gnokoheat/oplog)
 
 MongoDB replicaset oplog tailing by Golang
 
