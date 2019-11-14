@@ -6,7 +6,7 @@ import (
 	"github.com/gnokoheat/oplog"
 )
 
-func example_Tail() {
+func Example_oplog_Tail() {
 	var o = &oplog.Options{
 		// (e.g. mongodb://username:password@127.0.0.1:27017,127.0.0.1:27018/local?replicaSet=rs01&authSource=admin)
 		Addrs:      []string{"127.0.0.1:27017", "127.0.0.1:27018"}, // replicaset host and port
